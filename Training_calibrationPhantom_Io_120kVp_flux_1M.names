@@ -1,0 +1,21 @@
+1. Title: Pima Indians Diabetes Database
+
+2. Sources:
+   (a) Original owners: Paurakh Rajbhandary (c)
+
+   (c) Date received: Sept 17, 2018 
+
+3. Relevant Information:
+      Several constraints were placed on the selection of these instances from
+      a larger database.  In particular, all patients here are females at
+      least 21 years old of Pima Indian heritage.  ADAP is an adaptive learning
+      routine that generates and executes digital analogs of perceptron-like
+      devices.  It is a unique algorithm; see the paper for details.
+
+4. Number of Attributes: 5 binned counts and 2 material thicknesses
+
+7. For Each Attribute: (all numeric-valued)
+   1. Water thickness
+   2. Bone thickness
+   3-7: Energy bin detected photon counts
+
