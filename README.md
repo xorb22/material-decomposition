@@ -12,11 +12,13 @@ TweeTrade platform allows user to write and automate conditional execution on st
 
 # Data Pipeline
 
-![data-pipeline](/graphics/fig-2-nn.svg)
+![data-pipeline](/graphics/fig-1-illustration.png)
 
 # Model and Settings
 ## Kafka Cluster Parameters & Settings
 Kafka cluster is run in 3 node cluster with two topics -- for Twitter('twitter-stream1') and for stock('stock-stream1'). Twitter producer is fed with data from Twitter API using `tweepy` python module. The stock producer is simulated for ~3200 NASDAQ stocks sampled once every one seconds using python script. Kafka producers and consumers are created using [kafka-python](https://kafka-python.readthedocs.io). Although default settings are selected, among available setting, these parameters may be customized for better performance for this use case: `ack` for asynchronous messaging, `retries` for retrying on message delivery failure, change from random partioning to one that may be more optimal for the use case.
+
+![data-pipeline](/graphics/fig-2-nn.svg)
 
 ## Spark Streaming Parameters & Settings
 Spark sptreamin is performed using pySpark.streaming.kafka module. The streams are not run in parallel, but multi-streams could be used and unionized to parallize processing. `spark.streaming.blockInterval` is set to default and may be fine tuned as needed.
