@@ -6,7 +6,7 @@ import numpy
 numpy.random.seed(7)
 
 # load pima indians dataset
-dataset = numpy.loadtxt("calibrationPhantom_Io_120kVp_flux_1M.csv", delimiter=",")
+dataset = numpy.loadtxt("Train_calibrationPhantom_Io_120kVp_flux_1M.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,2:]
 Y = dataset[:,1:3]
@@ -29,4 +29,14 @@ model.fit(X, Y, epochs=150, batch_size=10)
 
 # evaluate the model
 scores = model.evaluate(X, Y)
-print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+print("On Training: \n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+
+# load test dataset
+dataset = numpy.loadtxt("Test_calibrationPhantom_Io_120kVp_flux_1M.csv", delimiter=",")
+# split into input (X) and output (Y) variables
+X_test = dataset[:,2:]
+Y_test = dataset[:,1:3]
+
+# evaluate the model
+scores = model.evaluate(X_test, Y_test)
+print("On Test: \n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
