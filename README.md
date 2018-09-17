@@ -12,7 +12,7 @@ TweeTrade platform allows user to write and automate conditional execution on st
 
 # Data Pipeline
 
-![data-pipeline](/graphics/fig-1-illustration.pdf)
+![data-pipeline](/graphics/fig-2-nn.svg)
 
 # Model and Settings
 ## Kafka Cluster Parameters & Settings
